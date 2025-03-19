@@ -379,34 +379,7 @@ export function LedPositions() {
  * @see {@link https://docs.signalrgb.com/plugins/plugin-exports#controllableparameters} For the parameter schema documentation
  */
 export function ControllableParameters() {
-  return [
-    {
-      property: "shutdownColor",
-      group: "lighting",
-      label: "Shutdown Color",
-      min: "0",
-      max: "360",
-      type: "color",
-      default: "009bde",
-    },
-    {
-      property: "LightingMode",
-      group: "lighting",
-      label: "Lighting Mode",
-      type: "combobox",
-      values: ["Canvas", "Forced"],
-      default: "Canvas",
-    },
-    {
-      property: "forcedColor",
-      group: "lighting",
-      label: "Forced Color",
-      min: "0",
-      max: "360",
-      type: "color",
-      default: "009bde",
-    },
-  ];
+  return [];
 }
 
 /**
@@ -508,10 +481,9 @@ export function Shutdown() {}
  * followed by the RGB color values for each key, and is sent to the device using
  * the HID protocol.
  *
- * @param {boolean} [shutdown=false] - Whether to send colors for a shutdown state
  * @returns {void}
  */
-function sendColors(shutdown = false) {
+function sendColors() {
   const rgbdata = grabColors();
 
   let packet = [0x06, 0x08, 0x00, 0x00, 0x01, 0x00, 0x7a, 0x01];
@@ -532,10 +504,9 @@ function sendColors(shutdown = false) {
  * The resulting array contains RGB triplets arranged by the key indices, followed by
  * padding bytes required by the keyboard's protocol.
  *
- * @param {boolean} [shutdown=false] - Whether to generate colors for a shutdown state
  * @returns {number[]} Array of RGB values for all keys plus padding bytes
  */
-function grabColors(shutdown = false) {
+function grabColors() {
   let rgbData = [];
 
   for (let iIdx = 0; iIdx < vKeys.length; iIdx++) {
@@ -543,15 +514,7 @@ function grabColors(shutdown = false) {
     const iPxY = vKeyPositions[iIdx][1];
     const iLedIdx = vKeys[iIdx] * 3;
 
-    let color;
-
-    if (shutdown) {
-      color = hexToRgb(shutdownColor);
-    } else if (LightingMode === "Forced") {
-      color = hexToRgb(forcedColor);
-    } else {
-      color = device.color(iPxX, iPxY);
-    }
+    const color = device.color(iPxX, iPxY);
 
     rgbData[iLedIdx] = color[0];
     rgbData[iLedIdx + 1] = color[1];
@@ -559,26 +522,10 @@ function grabColors(shutdown = false) {
   }
 
   const fill = new Array(24).fill(0);
+
   rgbData = rgbData.concat(fill);
 
   return rgbData;
-}
-
-/**
- * Converts a hex color code to an RGB array.
- *
- * @param {string} hex - The hex color code (e.g., "#FFFFFF").
- * @returns {number[]} An array containing the RGB values [red, green, blue].
- */
-function hexToRgb(hex) {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  const colors = [];
-
-  colors[0] = Number.parseInt(result[1], 16);
-  colors[1] = Number.parseInt(result[2], 16);
-  colors[2] = Number.parseInt(result[3], 16);
-
-  return colors;
 }
 
 export function Image() {
