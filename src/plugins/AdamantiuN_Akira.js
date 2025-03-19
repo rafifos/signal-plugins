@@ -1,8 +1,9 @@
 /*
  * Created on Tue Mar 18 2025
+ * Last updated on Wed Mar 19 2025
  *
  * Author: Rafael "rafifos" Julio <development@rafifos.dev>
- * Version: v1.0.0
+ * Version: v1.1.0
  *
  * Based on the Leobog Hi75 plugin maintained by the Nollie community at https://github.com/NollieL/SignalRgb_CN_Key/blob/20be9ea0a5a8d1f15c80b2df6d0c7d731ae6a4c0/Leobog%20Hi75.js
  *
@@ -10,6 +11,17 @@
  *
  * v1.0.0
  * - Initial release
+ *
+ * v1.1.0
+ * - Improve documentation on `vKeyPositions`
+ * - Remove `ControllableParameters`, will be re-added in the future
+ * - Update device image to follow SignalRGB's image guidelines
+ *
+ * TODO:
+ * - Add `ControllableParameters` for user customization.
+ *   The initial plan is to:
+ *   - Light mode: `canvas` or `forced`
+ *   - Allow the user to set the Light effect based on the OEM software options (See: https://gitlab.com/CalcProgrammer1/OpenRGB/-/issues/4297)
  */
 
 /**
