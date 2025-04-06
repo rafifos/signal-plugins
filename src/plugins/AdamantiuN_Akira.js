@@ -223,7 +223,7 @@ const vKeyNames = [
   "|",
   "ENTER",
   "SHIFT_",
-  "left",
+  "LEFT",
   "NULL12",
   "NULL13",
   "NULL14",
@@ -350,7 +350,7 @@ const vKeyPositions = [
   [15, 2], // |
   [15, 3], // ENTER
   [14, 4], // SHIFT
-  [15, 5], // left
+  [15, 5], // LEFT
   [10, 6], // NULL12
   [17, 0], // NULL13
   [17, 1], // NULL14
