@@ -17,6 +17,9 @@
  * - Remove `ControllableParameters`, will be re-added in the future
  * - Update device image to follow SignalRGB's image guidelines
  *
+ * v1.1.1
+ * - Improve endpoint validation
+ *
  * TODO:
  * - Add `ControllableParameters` for user customization.
  *   The initial plan is to:
@@ -418,7 +421,12 @@ export function ControllableParameters() {
  * @see {@link https://docs.signalrgb.com/plugins/plugin-exports#validate}
  */
 export function Validate(endpoint) {
-  return endpoint.interface === 1 && endpoint.usage === 0x0001 && endpoint.usage_page === 0xff00;
+  return (
+    endpoint.interface === 1 &&
+    endpoint.usage === 0x0001 &&
+    endpoint.usage_page === 0xff00 &&
+    endpoint.collection === 0x0006
+  );
 }
 
 /**
