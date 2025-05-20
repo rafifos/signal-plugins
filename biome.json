@@ -10,10 +10,10 @@
 		"ignore": []
 	},
 	"formatter": {
-		"enabled": true,
-		"indentStyle": "space",
-		"lineWidth": 120
-	},
+  "enabled": true,
+  "indentStyle": "space",
+  "lineWidth": 80
+},
 	"organizeImports": {
 		"enabled": true
 	},
