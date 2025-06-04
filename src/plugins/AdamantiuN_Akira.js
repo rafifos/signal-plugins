@@ -1,6 +1,6 @@
 /*
  * Created on Tue Mar 18 2025
- * Last updated on Wed Mar 19 2025
+ * Last updated on Wed Jul 04 2025
  *
  * Author: Rafael "rafifos" Julio <development@rafifos.dev>
  * Version: v2.0.1
