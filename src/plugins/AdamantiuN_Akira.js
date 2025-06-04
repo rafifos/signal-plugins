@@ -24,6 +24,10 @@
  * - Rebase against upstream SinoWealth plugin.
  * - Improves LedPositions to be more accurate.
  * - Bring back `ControllableParameters` to allow user customization.
+ *
+ * v2.0.1
+ * - Add Right Alt mappings
+ * - Center Space between it's neighboring keys
  */
 
 /**
@@ -322,7 +326,7 @@ const vLedPositions = [
   [0, 5],
   [1, 5],
   [2, 5],
-  [6, 5],
+  [5, 5],
   [8, 5],
   [9, 5],
   [10, 5],
