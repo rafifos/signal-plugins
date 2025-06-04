@@ -120,7 +120,6 @@ export function DefaultScale() {
   return 1.0;
 }
 
-
 /**
  * Array of LED indices for the Akira plugin.
  * Represents specific LED positions to be controlled in a predefined pattern.
@@ -132,7 +131,8 @@ const vLeds = [
   0, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 1, 7, 13, 19, 25, 31, 37,
   43, 49, 55, 61, 67, 73, 79, 85, 2, 8, 14, 20, 26, 32, 38, 44, 50, 56, 62, 68,
   74, 80, 86, 3, 9, 15, 21, 27, 33, 39, 45, 51, 57, 63, 69, 81, 87, 4, 10, 16,
-  22, 28, 34, 40, 46, 52, 58, 64, 70, 82, 88, 5, 11, 17, 35, 53, 59, 77, 83, 89,
+  22, 28, 34, 40, 46, 52, 58, 64, 70, 82, 88, 5, 11, 17, 35, 53, 59, 65, 77, 83,
+  89,
 ];
 
 /**
@@ -219,6 +219,7 @@ const vLedNames = [
   "Left Win",
   "Left Alt",
   "Space",
+  "Right Alt",
   "Fn",
   "Right Ctrl",
   "Left Arrow",
@@ -239,7 +240,6 @@ const vLedNames = [
 export function LedNames() {
   return vLedNames;
 }
-
 
 /**
  * Array of LED positions on a 2D grid.
@@ -323,6 +323,7 @@ const vLedPositions = [
   [1, 5],
   [2, 5],
   [6, 5],
+  [8, 5],
   [9, 5],
   [10, 5],
   [12, 5],
