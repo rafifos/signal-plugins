@@ -3,9 +3,10 @@
  * Last updated on Wed Mar 19 2025
  *
  * Author: Rafael "rafifos" Julio <development@rafifos.dev>
- * Version: v1.1.0
+ * Version: v2.0.1
  *
- * Based on the Leobog Hi75 plugin maintained by the Nollie community at https://github.com/NollieL/SignalRgb_CN_Key/blob/20be9ea0a5a8d1f15c80b2df6d0c7d731ae6a4c0/Leobog%20Hi75.js
+ * Initially based on the Leobog Hi75 plugin maintained by the Nollie community at https://github.com/NollieL/SignalRgb_CN_Key/blob/20be9ea0a5a8d1f15c80b2df6d0c7d731ae6a4c0/Leobog%20Hi75.js
+ * Later rebased against SignalRGB's SinoWealth plugin.
  *
  * Changelog:
  *
