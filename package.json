@@ -23,12 +23,9 @@
   "packageManager": "pnpm@10.6.3",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "lefthook": "^1.11.3"
+    "lefthook": "^1.11.13"
   },
   "pnpm": {
-    "onlyBuiltDependencies": [
-      "@biomejs/biome",
-      "lefthook"
-    ]
+    "onlyBuiltDependencies": ["@biomejs/biome", "lefthook"]
   }
 }
